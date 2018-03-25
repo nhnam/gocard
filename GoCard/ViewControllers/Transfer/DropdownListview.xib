@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DropdownListview" customModule="GoCard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="310" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ft1-cZ-od7">
+                    <rect key="frame" x="53" y="3" width="214" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="rLD-6e-b22"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="ifl-HL-Ney"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tda-pk-eEV">
+                    <rect key="frame" x="267" y="3" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="ELJ-3a-DUe"/>
+                    </constraints>
+                    <state key="normal" image="Dropdown Icon"/>
+                    <connections>
+                        <action selector="didTouchDropdownButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="0bm-HY-iZX"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User Placeholder Icon" translatesAutoresizingMaskIntoConstraints="NO" id="jVu-Vf-53D">
+                    <rect key="frame" x="3" y="3" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Gwv-0P-KGe"/>
+                        <constraint firstAttribute="width" constant="40" id="L3U-DH-D88"/>
+                    </constraints>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="914-oH-BXN">
+                    <rect key="frame" x="0.0" y="43" width="310" height="257"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="jAT-8F-9CH"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="VNX-Zc-Cmq"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Tda-pk-eEV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="3" id="4YN-Nh-K8s"/>
+                <constraint firstAttribute="bottom" secondItem="914-oH-BXN" secondAttribute="bottom" id="6n8-SK-Rut"/>
+                <constraint firstAttribute="trailing" secondItem="914-oH-BXN" secondAttribute="trailing" id="Bb3-YJ-n9B"/>
+                <constraint firstItem="914-oH-BXN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BgN-ti-Kbw"/>
+                <constraint firstItem="ft1-cZ-od7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="3" id="Jyn-wF-n37"/>
+                <constraint firstItem="Tda-pk-eEV" firstAttribute="top" secondItem="ft1-cZ-od7" secondAttribute="top" id="LrB-5x-MnP"/>
+                <constraint firstItem="Tda-pk-eEV" firstAttribute="bottom" secondItem="ft1-cZ-od7" secondAttribute="bottom" id="ZTk-u3-qSW"/>
+                <constraint firstItem="914-oH-BXN" firstAttribute="top" secondItem="jVu-Vf-53D" secondAttribute="bottom" id="ewo-qv-oAN"/>
+                <constraint firstItem="Tda-pk-eEV" firstAttribute="leading" secondItem="ft1-cZ-od7" secondAttribute="trailing" id="fYD-3U-j8h"/>
+                <constraint firstItem="ft1-cZ-od7" firstAttribute="leading" secondItem="jVu-Vf-53D" secondAttribute="trailing" constant="10" id="mLA-Zd-W0E"/>
+                <constraint firstItem="jVu-Vf-53D" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="3" id="mqR-7E-twv"/>
+                <constraint firstAttribute="trailing" secondItem="Tda-pk-eEV" secondAttribute="trailing" constant="3" id="x9i-Gf-lXz"/>
+                <constraint firstItem="jVu-Vf-53D" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="3" id="yil-lg-uqg"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="dropdownButton" destination="Tda-pk-eEV" id="qlg-3p-Lcv"/>
+                <outlet property="filterTextfield" destination="ft1-cZ-od7" id="eFa-ur-w4M"/>
+                <outlet property="tableView" destination="914-oH-BXN" id="u1b-Wi-9IV"/>
+                <outlet property="userIcon" destination="jVu-Vf-53D" id="MHT-wV-LP7"/>
+            </connections>
+            <point key="canvasLocation" x="-319" y="-316"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Dropdown Icon" width="25" height="25"/>
+        <image name="User Placeholder Icon" width="25" height="25"/>
+    </resources>
+</document>

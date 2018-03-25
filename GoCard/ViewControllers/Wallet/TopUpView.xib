@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TopUpView" customModule="GoCard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="310" height="540"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFx-IP-v84">
+                    <rect key="frame" x="0.0" y="40" width="310" height="460"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5A-x4-zc4">
+                    <rect key="frame" x="275" y="55" width="20" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="282-Jl-sUc"/>
+                        <constraint firstAttribute="height" constant="22" id="ACZ-Ww-G68"/>
+                    </constraints>
+                    <state key="normal" image="Close Icon Gray"/>
+                    <connections>
+                        <action selector="didTouchCloseButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="c0F-ko-ifn"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rk4-Ms-Rri">
+                    <rect key="frame" x="20" y="53" width="247" height="24"/>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxe-tf-6on">
+                    <rect key="frame" x="20" y="107" width="265" height="51"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QnH-DY-aUM">
+                            <rect key="frame" x="180" y="0.0" width="77" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TwR-D9-ELD">
+                            <rect key="frame" x="8" y="0.0" width="78" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view tag="101" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RM7-Rf-BQ2" customClass="WalletSelectionControl" customModule="GoCard" customModuleProvider="target">
+                            <rect key="frame" x="8" y="0.0" width="78" height="50"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Credit Card Icon" translatesAutoresizingMaskIntoConstraints="NO" id="awr-Oz-KDl">
+                                    <rect key="frame" x="17" y="9" width="45" height="33"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="45" id="5ho-hx-RSl"/>
+                                        <constraint firstAttribute="height" constant="33" id="JBq-A6-ver"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="awr-Oz-KDl" firstAttribute="centerY" secondItem="RM7-Rf-BQ2" secondAttribute="centerY" id="Tcd-Cc-k2Y"/>
+                                <constraint firstItem="awr-Oz-KDl" firstAttribute="centerX" secondItem="RM7-Rf-BQ2" secondAttribute="centerX" id="ZgM-sI-59G"/>
+                            </constraints>
+                        </view>
+                        <view tag="102" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GTq-FA-WgV" customClass="WalletSelectionControl" customModule="GoCard" customModuleProvider="target">
+                            <rect key="frame" x="94" y="0.0" width="78" height="50"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Apple Pay Icon" translatesAutoresizingMaskIntoConstraints="NO" id="vCw-V4-3PT">
+                                    <rect key="frame" x="13" y="8" width="52" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="35" id="LYk-m8-PNn"/>
+                                        <constraint firstAttribute="width" constant="52" id="Ppr-h4-aYU"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="vCw-V4-3PT" firstAttribute="centerX" secondItem="GTq-FA-WgV" secondAttribute="centerX" id="LWT-fG-G1K"/>
+                                <constraint firstAttribute="height" constant="50" id="Uuv-z1-nig"/>
+                                <constraint firstAttribute="width" constant="78" id="VtL-dA-8n2"/>
+                                <constraint firstItem="vCw-V4-3PT" firstAttribute="centerY" secondItem="GTq-FA-WgV" secondAttribute="centerY" id="tPc-IH-hGa"/>
+                            </constraints>
+                        </view>
+                        <view tag="103" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wz-PF-5bM" customClass="WalletSelectionControl" customModule="GoCard" customModuleProvider="target">
+                            <rect key="frame" x="180" y="0.0" width="78" height="50"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bank Transfer Icon" translatesAutoresizingMaskIntoConstraints="NO" id="1Yg-Ec-WMl">
+                                    <rect key="frame" x="9" y="10" width="60" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="F43-CT-eyQ"/>
+                                        <constraint firstAttribute="width" constant="60" id="vvy-w0-Qw3"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="1Yg-Ec-WMl" firstAttribute="centerX" secondItem="3wz-PF-5bM" secondAttribute="centerX" id="BCK-et-5WJ"/>
+                                <constraint firstItem="1Yg-Ec-WMl" firstAttribute="centerY" secondItem="3wz-PF-5bM" secondAttribute="centerY" id="Ltd-eg-Jk7"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="QnH-DY-aUM" firstAttribute="height" secondItem="GTq-FA-WgV" secondAttribute="height" id="1EB-nt-Eya"/>
+                        <constraint firstItem="3wz-PF-5bM" firstAttribute="width" secondItem="GTq-FA-WgV" secondAttribute="width" id="2DJ-ZJ-FLl"/>
+                        <constraint firstItem="RM7-Rf-BQ2" firstAttribute="centerY" secondItem="TwR-D9-ELD" secondAttribute="centerY" id="4TJ-PJ-R74"/>
+                        <constraint firstItem="GTq-FA-WgV" firstAttribute="centerX" secondItem="jxe-tf-6on" secondAttribute="centerX" id="684-dI-DXl"/>
+                        <constraint firstAttribute="trailing" secondItem="QnH-DY-aUM" secondAttribute="trailing" constant="8" id="7Pb-ou-ae1"/>
+                        <constraint firstItem="3wz-PF-5bM" firstAttribute="centerX" secondItem="QnH-DY-aUM" secondAttribute="centerX" id="Aml-BM-ZDT"/>
+                        <constraint firstItem="GTq-FA-WgV" firstAttribute="centerY" secondItem="jxe-tf-6on" secondAttribute="centerY" id="F0a-Uu-d5o"/>
+                        <constraint firstItem="TwR-D9-ELD" firstAttribute="leading" secondItem="jxe-tf-6on" secondAttribute="leading" constant="8" id="FeF-M4-cSo"/>
+                        <constraint firstAttribute="height" constant="51" id="JIh-Zl-aYq"/>
+                        <constraint firstItem="TwR-D9-ELD" firstAttribute="centerY" secondItem="GTq-FA-WgV" secondAttribute="centerY" id="Mwj-Dv-bvw"/>
+                        <constraint firstItem="RM7-Rf-BQ2" firstAttribute="centerX" secondItem="TwR-D9-ELD" secondAttribute="centerX" id="Sh7-QL-Adk"/>
+                        <constraint firstItem="GTq-FA-WgV" firstAttribute="leading" secondItem="TwR-D9-ELD" secondAttribute="trailing" constant="8" id="Zax-U9-qHg"/>
+                        <constraint firstItem="RM7-Rf-BQ2" firstAttribute="width" secondItem="GTq-FA-WgV" secondAttribute="width" id="dUy-u8-Uns"/>
+                        <constraint firstItem="QnH-DY-aUM" firstAttribute="leading" secondItem="GTq-FA-WgV" secondAttribute="trailing" constant="8" id="eH0-M0-Siz"/>
+                        <constraint firstItem="3wz-PF-5bM" firstAttribute="centerY" secondItem="QnH-DY-aUM" secondAttribute="centerY" id="g9o-1B-hJ5"/>
+                        <constraint firstItem="RM7-Rf-BQ2" firstAttribute="height" secondItem="TwR-D9-ELD" secondAttribute="height" id="tB7-DM-Edq"/>
+                        <constraint firstItem="3wz-PF-5bM" firstAttribute="height" secondItem="QnH-DY-aUM" secondAttribute="height" id="u85-5o-nhI"/>
+                        <constraint firstItem="QnH-DY-aUM" firstAttribute="centerY" secondItem="GTq-FA-WgV" secondAttribute="centerY" id="uho-zS-bHk"/>
+                        <constraint firstItem="TwR-D9-ELD" firstAttribute="height" secondItem="GTq-FA-WgV" secondAttribute="height" id="yeN-Dp-8mc"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120.00 SGD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61Q-jG-Kcv">
+                    <rect key="frame" x="81" y="178" width="149" height="33"/>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="28"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YIx-jp-xRk">
+                    <rect key="frame" x="20" y="216" width="265" height="250"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="due-Qr-M9o">
+                    <rect key="frame" x="233" y="190" width="16" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="16" id="bbR-EJ-NtP"/>
+                        <constraint firstAttribute="height" constant="16" id="f2u-9H-jHK"/>
+                    </constraints>
+                    <state key="normal" image="Dropdown Round Black Icon"/>
+                    <connections>
+                        <action selector="didTouchDropdownButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="UK8-JY-afd"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pss-tE-l4m">
+                    <rect key="frame" x="45" y="471" width="220" height="55"/>
+                    <color key="backgroundColor" red="0.44313725490196076" green="0.8901960784313725" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="GKz-a7-jsw"/>
+                        <constraint firstAttribute="width" constant="220" id="Gn7-n1-9Uf"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="didTouchActionButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="dw9-1i-76O"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S4u-b7-v7c">
+                    <rect key="frame" x="81" y="178" width="149" height="33"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="28"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVQ-4J-Kpu">
+                    <rect key="frame" x="233" y="185" width="20" height="20"/>
+                    <color key="backgroundColor" red="0.33333333329999998" green="0.73725490199999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="Qsq-BJ-WD5"/>
+                        <constraint firstAttribute="width" constant="20" id="yrp-Yz-c7I"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                    <state key="normal" title="DONE" image="Check Icon"/>
+                    <connections>
+                        <action selector="didTouchCheckDoneButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="rMw-eB-YXg"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="pss-tE-l4m" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1pd-QO-kQh"/>
+                <constraint firstItem="jxe-tf-6on" firstAttribute="leading" secondItem="Rk4-Ms-Rri" secondAttribute="leading" id="28V-A6-Fep"/>
+                <constraint firstItem="CVQ-4J-Kpu" firstAttribute="centerY" secondItem="S4u-b7-v7c" secondAttribute="centerY" id="4Gf-ny-5Q3"/>
+                <constraint firstItem="61Q-jG-Kcv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8yS-Pf-EXB"/>
+                <constraint firstItem="S4u-b7-v7c" firstAttribute="top" secondItem="61Q-jG-Kcv" secondAttribute="top" id="AdC-tg-D7t"/>
+                <constraint firstItem="YIx-jp-xRk" firstAttribute="leading" secondItem="jxe-tf-6on" secondAttribute="leading" id="GC0-dx-nuq"/>
+                <constraint firstItem="Rk4-Ms-Rri" firstAttribute="bottom" secondItem="g5A-x4-zc4" secondAttribute="bottom" id="H8J-oQ-YFi"/>
+                <constraint firstItem="jxe-tf-6on" firstAttribute="top" secondItem="Rk4-Ms-Rri" secondAttribute="bottom" constant="30" id="JBM-fj-DBx"/>
+                <constraint firstAttribute="bottom" secondItem="pss-tE-l4m" secondAttribute="bottom" constant="14" id="Jr9-rp-BEu"/>
+                <constraint firstItem="bFx-IP-v84" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="L6c-DB-l7a"/>
+                <constraint firstItem="jxe-tf-6on" firstAttribute="trailing" secondItem="g5A-x4-zc4" secondAttribute="trailing" constant="-10" id="QJQ-Y9-MlN"/>
+                <constraint firstAttribute="bottom" secondItem="bFx-IP-v84" secondAttribute="bottom" constant="40" id="QYa-D1-khU"/>
+                <constraint firstItem="due-Qr-M9o" firstAttribute="leading" secondItem="61Q-jG-Kcv" secondAttribute="trailing" constant="3" id="Tb7-Xn-cv7"/>
+                <constraint firstItem="bFx-IP-v84" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Wtv-k1-KEa"/>
+                <constraint firstItem="due-Qr-M9o" firstAttribute="centerY" secondItem="61Q-jG-Kcv" secondAttribute="centerY" constant="3" id="Xc3-rx-897"/>
+                <constraint firstItem="CVQ-4J-Kpu" firstAttribute="leading" secondItem="S4u-b7-v7c" secondAttribute="trailing" constant="3" id="XjT-ea-PDQ"/>
+                <constraint firstItem="Rk4-Ms-Rri" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="ZAq-Gf-vAS"/>
+                <constraint firstItem="pss-tE-l4m" firstAttribute="top" secondItem="YIx-jp-xRk" secondAttribute="bottom" constant="5" id="b2G-Ob-8FA"/>
+                <constraint firstItem="S4u-b7-v7c" firstAttribute="bottom" secondItem="61Q-jG-Kcv" secondAttribute="bottom" id="bRV-T1-k2e"/>
+                <constraint firstItem="g5A-x4-zc4" firstAttribute="leading" secondItem="Rk4-Ms-Rri" secondAttribute="trailing" constant="8" id="bZk-Xe-468"/>
+                <constraint firstAttribute="trailing" secondItem="bFx-IP-v84" secondAttribute="trailing" id="cDi-1l-Jtv"/>
+                <constraint firstItem="g5A-x4-zc4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="55" id="dck-3l-hE7"/>
+                <constraint firstAttribute="trailing" secondItem="g5A-x4-zc4" secondAttribute="trailing" constant="15" id="kpw-Wa-bdq"/>
+                <constraint firstItem="61Q-jG-Kcv" firstAttribute="top" secondItem="jxe-tf-6on" secondAttribute="bottom" constant="20" id="m9p-Xy-YzG"/>
+                <constraint firstItem="S4u-b7-v7c" firstAttribute="leading" secondItem="61Q-jG-Kcv" secondAttribute="leading" id="qmb-2F-6NL"/>
+                <constraint firstItem="S4u-b7-v7c" firstAttribute="trailing" secondItem="61Q-jG-Kcv" secondAttribute="trailing" id="rUK-6d-1MU"/>
+                <constraint firstItem="YIx-jp-xRk" firstAttribute="trailing" secondItem="jxe-tf-6on" secondAttribute="trailing" id="xVl-i8-4EY"/>
+                <constraint firstItem="YIx-jp-xRk" firstAttribute="top" secondItem="61Q-jG-Kcv" secondAttribute="bottom" constant="5" id="xtU-31-EuZ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="actionButton" destination="pss-tE-l4m" id="aIh-M9-DEL"/>
+                <outlet property="checkDoneEditButton" destination="CVQ-4J-Kpu" id="275-pu-xg2"/>
+                <outlet property="closeButton" destination="g5A-x4-zc4" id="hL8-0Z-Psd"/>
+                <outlet property="containerView" destination="YIx-jp-xRk" id="YfO-Wk-NfO"/>
+                <outlet property="dropdownButton" destination="due-Qr-M9o" id="9Ty-NT-ETD"/>
+                <outlet property="editableValueTextfield" destination="S4u-b7-v7c" id="a5x-ry-QAY"/>
+                <outlet property="topupTitle" destination="Rk4-Ms-Rri" id="vit-hu-gIh"/>
+                <outlet property="valueLabel" destination="61Q-jG-Kcv" id="jbp-oW-iHA"/>
+                <outlet property="whiteBgView" destination="bFx-IP-v84" id="nMp-gf-Hov"/>
+                <outletCollection property="walletSegments" destination="RM7-Rf-BQ2" collectionClass="NSMutableArray" id="95L-M1-NKn"/>
+                <outletCollection property="walletSegments" destination="GTq-FA-WgV" collectionClass="NSMutableArray" id="KCX-Ya-0jZ"/>
+                <outletCollection property="walletSegments" destination="3wz-PF-5bM" collectionClass="NSMutableArray" id="2dt-8a-VMH"/>
+            </connections>
+            <point key="canvasLocation" x="65" y="-441"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Apple Pay Icon" width="54" height="35"/>
+        <image name="Bank Transfer Icon" width="62" height="28"/>
+        <image name="Check Icon" width="30" height="30"/>
+        <image name="Close Icon Gray" width="20" height="20"/>
+        <image name="Credit Card Icon" width="47" height="33"/>
+        <image name="Dropdown Round Black Icon" width="16" height="16"/>
+    </resources>
+</document>

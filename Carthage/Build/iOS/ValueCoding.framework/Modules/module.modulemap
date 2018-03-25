@@ -1,0 +1,10 @@
+framework module ValueCoding {
+  umbrella header "ValueCoding.h"
+
+  export *
+  module * { export * }
+}
+
+module ValueCoding.Swift {
+    header "ValueCoding-Swift.h"
+}

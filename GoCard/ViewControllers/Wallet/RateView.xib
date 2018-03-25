@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="nzX-8n-lkA" customClass="RateView" customModule="GoCard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2mE-7R-Srw">
+                    <rect key="frame" x="0.0" y="40" width="375" height="240"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <connections>
+                        <outlet property="dataSource" destination="nzX-8n-lkA" id="mZe-eK-Hpn"/>
+                        <outlet property="delegate" destination="nzX-8n-lkA" id="GNp-Hq-MTR"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aR-oC-cck">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0h9-61-QAd">
+                            <rect key="frame" x="0.0" y="0.0" width="165.5" height="40"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="use-oP-IhD">
+                            <rect key="frame" x="178" y="14" width="19" height="12"/>
+                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="10"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0k-Dr-hY2">
+                            <rect key="frame" x="281" y="14.5" width="23" height="12"/>
+                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="10"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENCY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7E-Ww-59c">
+                            <rect key="frame" x="57.5" y="14.5" width="51" height="12"/>
+                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="10"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Isd-Sz-THH">
+                            <rect key="frame" x="210" y="0.0" width="165" height="40"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BALANCE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTc-li-img">
+                            <rect key="frame" x="165.5" y="0.0" width="44.5" height="12"/>
+                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="10"/>
+                            <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.47843137250000001" green="0.82745098039999998" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="use-oP-IhD" firstAttribute="centerX" secondItem="6aR-oC-cck" secondAttribute="centerX" id="2Zw-UX-GDm"/>
+                        <constraint firstAttribute="height" constant="40" id="81x-d8-4ij"/>
+                        <constraint firstItem="K7E-Ww-59c" firstAttribute="centerX" secondItem="0h9-61-QAd" secondAttribute="centerX" id="Aia-xD-8g6"/>
+                        <constraint firstItem="TTc-li-img" firstAttribute="centerX" secondItem="use-oP-IhD" secondAttribute="centerX" id="Eks-pU-0lh"/>
+                        <constraint firstItem="K7E-Ww-59c" firstAttribute="centerY" secondItem="0h9-61-QAd" secondAttribute="centerY" id="QB6-vG-s4S"/>
+                        <constraint firstItem="Isd-Sz-THH" firstAttribute="leading" secondItem="TTc-li-img" secondAttribute="trailing" id="Qde-zz-kQI"/>
+                        <constraint firstItem="K7E-Ww-59c" firstAttribute="centerY" secondItem="6aR-oC-cck" secondAttribute="centerY" id="SSn-Tb-G5l"/>
+                        <constraint firstItem="0h9-61-QAd" firstAttribute="leading" secondItem="6aR-oC-cck" secondAttribute="leading" id="Wkb-3X-acG"/>
+                        <constraint firstItem="m0k-Dr-hY2" firstAttribute="centerY" secondItem="Isd-Sz-THH" secondAttribute="centerY" id="Xyw-xu-IMx"/>
+                        <constraint firstItem="use-oP-IhD" firstAttribute="centerY" secondItem="6aR-oC-cck" secondAttribute="centerY" id="dry-K0-0gk"/>
+                        <constraint firstAttribute="bottom" secondItem="Isd-Sz-THH" secondAttribute="bottom" id="m9v-cI-QlK"/>
+                        <constraint firstItem="m0k-Dr-hY2" firstAttribute="centerX" secondItem="Isd-Sz-THH" secondAttribute="centerX" id="nQ4-VU-aQ1"/>
+                        <constraint firstAttribute="trailing" secondItem="Isd-Sz-THH" secondAttribute="trailing" id="pgy-QF-i2R"/>
+                        <constraint firstItem="0h9-61-QAd" firstAttribute="top" secondItem="6aR-oC-cck" secondAttribute="top" id="soL-m4-HcM"/>
+                        <constraint firstItem="TTc-li-img" firstAttribute="top" secondItem="6aR-oC-cck" secondAttribute="top" id="ufS-df-ICh"/>
+                        <constraint firstItem="TTc-li-img" firstAttribute="leading" secondItem="0h9-61-QAd" secondAttribute="trailing" id="v4v-mk-Rb1"/>
+                        <constraint firstAttribute="bottom" secondItem="0h9-61-QAd" secondAttribute="bottom" id="vzq-WD-yIc"/>
+                        <constraint firstItem="Isd-Sz-THH" firstAttribute="top" secondItem="6aR-oC-cck" secondAttribute="top" id="w7O-uL-gBq"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="6aR-oC-cck" firstAttribute="leading" secondItem="nzX-8n-lkA" secondAttribute="leading" id="6v5-xa-ghc"/>
+                <constraint firstItem="6aR-oC-cck" firstAttribute="top" secondItem="nzX-8n-lkA" secondAttribute="top" id="8GY-3M-lUX"/>
+                <constraint firstItem="2mE-7R-Srw" firstAttribute="leading" secondItem="nzX-8n-lkA" secondAttribute="leading" id="DH9-T0-ilg"/>
+                <constraint firstAttribute="trailing" secondItem="2mE-7R-Srw" secondAttribute="trailing" id="n35-8e-RWS"/>
+                <constraint firstItem="2mE-7R-Srw" firstAttribute="top" secondItem="6aR-oC-cck" secondAttribute="bottom" id="tFK-bo-x6E"/>
+                <constraint firstAttribute="trailing" secondItem="6aR-oC-cck" secondAttribute="trailing" id="tT6-bu-aFK"/>
+                <constraint firstAttribute="bottom" secondItem="2mE-7R-Srw" secondAttribute="bottom" id="yoZ-j7-CIW"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="tableView" destination="2mE-7R-Srw" id="23G-OR-AIa"/>
+                <outletCollection property="titles" destination="K7E-Ww-59c" collectionClass="NSMutableArray" id="U0T-vy-TAb"/>
+                <outletCollection property="titles" destination="use-oP-IhD" collectionClass="NSMutableArray" id="aha-Jn-lGX"/>
+                <outletCollection property="titles" destination="m0k-Dr-hY2" collectionClass="NSMutableArray" id="5ma-QJ-2NP"/>
+                <outletCollection property="titles" destination="TTc-li-img" collectionClass="NSMutableArray" id="wN0-Ms-IT5"/>
+            </connections>
+            <point key="canvasLocation" x="-342" y="-197"/>
+        </view>
+    </objects>
+</document>

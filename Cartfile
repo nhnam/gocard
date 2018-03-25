@@ -1,0 +1,5 @@
+github "michaeltyson/TPKeyboardAvoiding"
+github "onevcat/kingfisher"
+github "drmohundro/SWXMLHash"
+github "Alamofire/Alamofire"
+github "SwiftyJSON/SwiftyJSON"

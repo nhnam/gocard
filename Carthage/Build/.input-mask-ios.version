@@ -1,0 +1,10 @@
+{
+  "xcodeVersion" : "Xcode 8.2.1\nBuild version 8C1002",
+  "commitish" : "2.2.1",
+  "iOS" : [
+    {
+      "hash" : "73f441117867534f2d210a61b83bd5c6df6b9a384b75b89438cfdfd97a0bfb6a",
+      "name" : "InputMask"
+    }
+  ]
+}

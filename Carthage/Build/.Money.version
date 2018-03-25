@@ -1,0 +1,10 @@
+{
+  "xcodeVersion" : "Xcode 8.2.1\nBuild version 8C1002",
+  "commitish" : "2.0.1",
+  "iOS" : [
+    {
+      "hash" : "ae4cfecb95870afcfa72708ecb7c65189577894fbe70e41c7c058ebb9d9c101d",
+      "name" : "Money"
+    }
+  ]
+}

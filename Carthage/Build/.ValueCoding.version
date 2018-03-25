@@ -1,0 +1,10 @@
+{
+  "xcodeVersion" : "Xcode 8.2.1\nBuild version 8C1002",
+  "commitish" : "2.1.0",
+  "iOS" : [
+    {
+      "hash" : "0c10e29382ab9ecf876d88118b759bccfd8e875f3194c88b6645efb8e7f346c8",
+      "name" : "ValueCoding"
+    }
+  ]
+}
