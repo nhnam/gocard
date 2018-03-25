@@ -32,7 +32,7 @@ final class VirtualCardView: UIView, UITextFieldDelegate, DropdownListviewDelega
         func config(_ tf: FloatLabelTextField, placeHolder textholder: String, activeTitle title: String) {
             tf.titleActiveTextColour = UIColor(hex:0x333333)
             tf.titleTextColour = UIColor(hex:0x999999)
-            tf.attributedPlaceholder = NSAttributedString(string: textholder, attributes: [NSFontAttributeName: UIFont.roboto(size: 14), NSForegroundColorAttributeName: UIColor(hex:0x999999), NSKernAttributeName: 1.9])
+            tf.attributedPlaceholder = NSAttributedString(string: textholder, attributes: [NSAttributedStringKey.font: UIFont.roboto(size: 14), NSAttributedStringKey.foregroundColor: UIColor(hex:0x999999), NSAttributedStringKey.kern: 1.9])
             tf.titleTextColour = UIColor.textDefault
             let acountLabel = tf.title
             acountLabel.text = title
@@ -55,11 +55,11 @@ final class VirtualCardView: UIView, UITextFieldDelegate, DropdownListviewDelega
         backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTouchOnSelf(_:))))
     }
     
-    internal func didTouchOnSelf(_ sender: UIGestureRecognizer) {
+    @objc internal func didTouchOnSelf(_ sender: UIGestureRecognizer) {
         textfields.forEach{ if $0.canResignFirstResponder { $0.resignFirstResponder() } }
     }
     
-    internal func textFieldDidChanged(_ sender: UITextField) {
+    @objc internal func textFieldDidChanged(_ sender: UITextField) {
         sender.characterSpacing(1.9)
     }
     

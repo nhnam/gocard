@@ -55,7 +55,7 @@ final class NewGoalViewController: BaseViewController, SliderListener{
             if let attText = valueLabel.attributedText {
                 let muAttText = NSMutableAttributedString(attributedString: attText)
                 muAttText.mutableString.setString(String(format: "%2.2f SGD", value))
-                muAttText.setAttributes([NSFontAttributeName: UIFont.mediumRoboto(size: 16)], range: NSRange(location:muAttText.length - 3, length:3))
+                muAttText.setAttributes([NSAttributedStringKey.font: UIFont.mediumRoboto(size: 16)], range: NSRange(location:muAttText.length - 3, length:3))
                 valueLabel.attributedText = muAttText
             } else {
                 valueLabel.text = String(format: "%2.2f SGD", value)
@@ -67,7 +67,7 @@ final class NewGoalViewController: BaseViewController, SliderListener{
             if let attText = sliderValueLabel.attributedText {
                 let muAttText = NSMutableAttributedString(attributedString: attText)
                 muAttText.mutableString.setString(String(format: "%2.2f SGD", sliderValue))
-                muAttText.setAttributes([NSFontAttributeName: UIFont.roboto(size: 10)], range: NSRange(location:muAttText.length - 3, length:3))
+                muAttText.setAttributes([NSAttributedStringKey.font: UIFont.roboto(size: 10)], range: NSRange(location:muAttText.length - 3, length:3))
                 sliderValueLabel.attributedText = muAttText
             } else {
                 sliderValueLabel.text = String(format: "%2.2f SGD", sliderValue)
@@ -116,7 +116,7 @@ final class NewGoalViewController: BaseViewController, SliderListener{
         plusButton.roundBorder(borderColor: UIColor.blueLight)
         featuredImageView.clipsToBounds = true
         featuredImageView.round(5)
-        goalTitleField.typingAttributes = [NSKernAttributeName:2.0]
+        goalTitleField.typingAttributes = [NSAttributedStringKey.kern.rawValue:2.0]
         descriptTextView.characterSpacing(0.65, lineHeight: 20, withFont: UIFont.roboto(size: 13))
         finishButton.characterSpacing(1.5, lineHeight: 14, withFont: UIFont.boldRoboto(size: 12))
         swipeLabel.characterSpacing(1.2, lineHeight: 10, withFont: UIFont.roboto(size: 10))

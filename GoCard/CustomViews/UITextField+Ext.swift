@@ -27,7 +27,7 @@ extension UITextField {
         let text = self.text ?? ""
         let attributedString = NSMutableAttributedString(string: text)
         if let font = self.font {
-            attributedString.addAttributes([NSFontAttributeName: font], range: NSRange(location:0, length: attributedString.length))
+            attributedString.addAttributes([NSAttributedStringKey.font: font], range: NSRange(location:0, length: attributedString.length))
         }
         attributedString.setLetterSpace(space)
         self.attributedText = attributedString

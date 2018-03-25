@@ -1,27 +1,31 @@
 {
-  "iOS" : [
+  "Mac" : [
     {
-      "hash" : "8db64ffdae8b2808162b6322bffe36dd551c749b908c157f07fbb4c02071a3d2",
-      "name" : "SwiftyJSON"
+      "name" : "SwiftyJSON",
+      "hash" : "7add0ed4e814f1a961e228f72218ff7ff2c76b43d85f0d5341dd5bf2d80894fa"
+    },
+    {
+      "name" : "SwiftyJSON",
+      "hash" : "7add0ed4e814f1a961e228f72218ff7ff2c76b43d85f0d5341dd5bf2d80894fa"
     }
   ],
-  "commitish" : "3.1.4",
   "watchOS" : [
     {
-      "hash" : "fbc2b4712a7b16877df3fc32c7db260cad422c261fe3c7508c06a1be922c1f61",
-      "name" : "SwiftyJSON"
+      "name" : "SwiftyJSON",
+      "hash" : "f3522e5b0484bfc3f792406ccd1544524a3bd2b4b3049fd30ee027e0e046ea21"
     }
   ],
   "tvOS" : [
     {
-      "hash" : "b31a905455ba4658cdf135ea43a157b8c0eddff29a8b876de4fb7e73152b63bf",
-      "name" : "SwiftyJSON"
+      "name" : "SwiftyJSON",
+      "hash" : "4f6ee03c5c5a0d3a80b9dfb669a0668ed5ef65ec08d52f68ae9739db3aed9c66"
     }
   ],
-  "Mac" : [
+  "commitish" : "4.0.0",
+  "iOS" : [
     {
-      "hash" : "ea43e9fc1ac9ed6d416f8975e378dfe53f11bdd72ab8b3e17946d2a4479e1f3f",
-      "name" : "SwiftyJSON"
+      "name" : "SwiftyJSON",
+      "hash" : "d9c6ff2d94736874a984609d88edb538bec7ee55b04f99e6212164086fe21df0"
     }
   ]
 }

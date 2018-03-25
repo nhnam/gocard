@@ -24,7 +24,7 @@ class TopUpBankTransfer: UIView {
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTouchView(_:))))
     }
     
-    func didTouchView(_ sender:UIGestureRecognizer?) {
+    @objc func didTouchView(_ sender:UIGestureRecognizer?) {
         textfields.forEach { if $0.canResignFirstResponder { $0.resignFirstResponder() } }
     }
 }

@@ -10,10 +10,10 @@ import Foundation
 import RealmSwift
 
 final class Wallet: Object {
-    dynamic var icon = ""
-    dynamic var amount:Float = 0.00
-    dynamic var unit = ""
-    dynamic var name = ""
+    @objc dynamic var icon = ""
+    @objc dynamic var amount:Float = 0.00
+    @objc dynamic var unit = ""
+    @objc dynamic var name = ""
     override class func primaryKey() -> String? {
         return Key.Wallet.unit.rawValue
     }

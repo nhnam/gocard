@@ -16,15 +16,15 @@ final class Goal: Object {
         case weekly = 2
         case monthly = 3
     }
-    dynamic var goalId:Int = 0
-    dynamic var title = ""
-    dynamic var detail = ""
-    dynamic var featurePhotoUrl = ""
-    dynamic var targetCost:Float = 0.0
-    dynamic var savedCost:Float = 0.0
-    dynamic var autoTransfer:Bool = false
-    dynamic var autoTransgerValue:Float = 0.0
-    dynamic var frequentcy:Frequentcy = .none
+    @objc dynamic var goalId:Int = 0
+    @objc dynamic var title = ""
+    @objc dynamic var detail = ""
+    @objc dynamic var featurePhotoUrl = ""
+    @objc dynamic var targetCost:Float = 0.0
+    @objc dynamic var savedCost:Float = 0.0
+    @objc dynamic var autoTransfer:Bool = false
+    @objc dynamic var autoTransgerValue:Float = 0.0
+    @objc dynamic var frequentcy:Frequentcy = .none
     override class func primaryKey() -> String? {
         return Key.Goal.goalId.rawValue
     }

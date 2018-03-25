@@ -29,12 +29,12 @@ final class SavingViewController: BaseViewController, UITableViewDelegate, UITab
         self.title = "SAVING"
         searchBar.round(5.0)
         searchBar.addImageLeftView(#imageLiteral(resourceName: "Search Icon"))
-        searchBar.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 12), NSForegroundColorAttributeName: UIColor(hex:0x333333)])
+        searchBar.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12), NSAttributedStringKey.foregroundColor: UIColor(hex:0x333333)])
         searchBar.delegate = self
         searchBar.addTarget(self, action: #selector(searchFieldDidChanged(_:)), for: .editingChanged)
         // load data
         let goals = try! Realm().objects(Goal.self).sorted(byKeyPath: Key.Goal.goalId.rawValue, ascending:false)
-        notificationToken = goals.addNotificationBlock { (changes: RealmCollectionChange) in
+        notificationToken = goals.observe { (changes: RealmCollectionChange) in
             switch changes {
             case .initial:
                 self.tableData.removeAll()
@@ -68,7 +68,7 @@ extension SavingViewController: UITextFieldDelegate {
         }
         return false
     }
-    internal func searchFieldDidChanged(_ textField: UITextField) {
+    @objc internal func searchFieldDidChanged(_ textField: UITextField) {
         if let keyword = searchBar.text {
             if isFiltering() {
                 applyFilter(keyword: keyword)

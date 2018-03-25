@@ -40,7 +40,7 @@ final class EnterPinViewController: BaseViewController {
 }
 
 extension EnterPinViewController {
-    internal func pinsValueChanged(_ sender: PinTextfield) {
+    @objc internal func pinsValueChanged(_ sender: PinTextfield) {
         if sender.text?.isEmpty ?? true{
             sender.back()
         } else {

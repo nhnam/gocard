@@ -39,7 +39,7 @@ final class NewCardViewController: BaseViewController {
         self.performSegue(withIdentifier: "toEnterPin", sender: self)
     }
     
-    internal func didTapBackground(_ sender:UIGestureRecognizer) {
+    @objc internal func didTapBackground(_ sender:UIGestureRecognizer) {
         self.view.endEditing(true)
     }
     

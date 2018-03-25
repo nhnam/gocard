@@ -56,10 +56,10 @@ final class DropdownListview: UIView, UITableViewDelegate, UITableViewDataSource
         return dropdown
     }
     
-    func filterDidChanged(_ sender: UITextField) {
+    @objc func filterDidChanged(_ sender: UITextField) {
         sender.characterSpacing(1.65)
         delegate?.dropDownTextChanged(sender.text)
-        if (sender.text?.characters.count ?? 0) >= 2 {
+        if (sender.text?.count ?? 0) >= 2 {
             selectedAccounts.removeAll()
             var accCopied:[Account] = []
             accCopied.append(contentsOf: accounts)
@@ -74,7 +74,7 @@ final class DropdownListview: UIView, UITableViewDelegate, UITableViewDataSource
     }
     
     private func isFilterred() -> Bool {
-        return (filterTextfield.text?.characters.count ?? 0) >= 2
+        return (filterTextfield.text?.count ?? 0) >= 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

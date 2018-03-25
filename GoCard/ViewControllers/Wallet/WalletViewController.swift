@@ -98,9 +98,14 @@ class WalletViewController: BaseViewController {
             if let attText = valueSend.attributedText {
                 let muAttText = NSMutableAttributedString(attributedString: attText)
                 guard let valueString = Float(sendValue).decimalString() else { return }
-                valueSendEditfield.attributedText = valueString.apply([NSFontAttributeName: UIFont.mediumRoboto(size: 28), NSKernAttributeName: 1.14, NSForegroundColorAttributeName: valueSend.textColor])
+                
+                valueSendEditfield.attributedText = valueString.apply([
+                    NSAttributedStringKey.font: UIFont.mediumRoboto(size: 28),
+                    NSAttributedStringKey.kern: 1.14,
+                    NSAttributedStringKey.foregroundColor: valueSend.textColor])
+                
                 muAttText.mutableString.setString(String(format: "%@ \(Session.currency)", valueString))
-                muAttText.setAttributes([NSFontAttributeName: UIFont.mediumRoboto(size: 16)], range: NSRange(location:muAttText.length - 3, length:3))
+                muAttText.setAttributes([NSAttributedStringKey.font: UIFont.mediumRoboto(size: 16)], range: NSRange(location:muAttText.length - 3, length:3))
                 valueSend.attributedText = muAttText
             } else {
                 valueSend.text = String(format: "%2.2f \(Session.currency)", sendValue)
@@ -115,9 +120,14 @@ class WalletViewController: BaseViewController {
             if let attText = valueGet.attributedText {
                 let muAttText = NSMutableAttributedString(attributedString: attText)
                 guard let valueString = Float(getValue).decimalString() else { return }
-                valueReceiveEditfield.attributedText = valueString.apply([NSFontAttributeName: UIFont.mediumRoboto(size: 28), NSKernAttributeName: 1.14, NSForegroundColorAttributeName: valueGet.textColor])
+                
+                valueReceiveEditfield.attributedText = valueString.apply([
+                    NSAttributedStringKey.font: UIFont.mediumRoboto(size: 28),
+                    NSAttributedStringKey.kern: 1.14,
+                    NSAttributedStringKey.foregroundColor: valueGet.textColor])
+                
                 muAttText.mutableString.setString(String(format: "%@ \(exUnit)", valueString))
-                muAttText.setAttributes([NSFontAttributeName: UIFont.mediumRoboto(size: 16)], range: NSRange(location:muAttText.length - 3, length:3))
+                muAttText.setAttributes([NSAttributedStringKey.font: UIFont.mediumRoboto(size: 16)], range: NSRange(location:muAttText.length - 3, length:3))
                 valueGet.attributedText = muAttText
             } else {
                 valueGet.text = String(format: "%2.2f \(exUnit)", getValue)
@@ -163,11 +173,11 @@ class WalletViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(exchangeDidUpdated(_:)), name: NSNotification.Name(rawValue:"ratesDidUpdated"), object: nil)
     }
     
-    internal func didTouchValueSendLabel(_ sender: UIGestureRecognizer) {
+    @objc internal func didTouchValueSendLabel(_ sender: UIGestureRecognizer) {
         isEditingSend = true
     }
     
-    internal func didTouchValueGetLabel(_ sender: UIGestureRecognizer) {
+    @objc internal func didTouchValueGetLabel(_ sender: UIGestureRecognizer) {
         isEditingReceive = true
     }
     
@@ -249,10 +259,10 @@ class WalletViewController: BaseViewController {
         BlurFullScreenView.show(view: view)
     }
     
-    internal func pickerWillClose(_ notification: Notification) {
+    @objc internal func pickerWillClose(_ notification: Notification) {
         reloadValues()
     }
-    internal func exchangeDidUpdated(_ notification: Notification) {
+    @objc internal func exchangeDidUpdated(_ notification: Notification) {
         reloadValues()
     }
     
@@ -311,9 +321,9 @@ extension WalletViewController:  UIPickerViewDataSource, UIPickerViewDelegate {
     }
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let attributedText = NSMutableAttributedString(string: currenciesUnit[row])
-        attributedText.addAttributes([NSForegroundColorAttributeName: UIColor.textDefault,
-                                      NSFontAttributeName: UIFont.mediumRoboto(size: 28),
-                                      NSKernAttributeName: 1.14], range: NSRange(location: 0, length: attributedText.length))
+        attributedText.addAttributes([NSAttributedStringKey.foregroundColor: UIColor.textDefault,
+                                      NSAttributedStringKey.font: UIFont.mediumRoboto(size: 28),
+                                      NSAttributedStringKey.kern: 1.14], range: NSRange(location: 0, length: attributedText.length))
         return attributedText
     }
     

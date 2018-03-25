@@ -22,7 +22,7 @@ final class RoundedPicker: UIControl {
         backgroundColor = UIColor(hex:0xAADFFC)
         rightIconView?.image = UIImage(asset: .dropIconWhite)
         guard let attributes = titleLabel?.characterSpacing(0.55, lineHeight: 16, withFont: UIFont.roboto(size:14)) else { return }
-        attributes.addAttribute(NSForegroundColorAttributeName, value: UIColor(hex:0xFCFCFD), range: NSRange(location:0, length: attributes.length))
+        attributes.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(hex:0xFCFCFD), range: NSRange(location:0, length: attributes.length))
         titleLabel?.attributedText = attributes
     }
     /*

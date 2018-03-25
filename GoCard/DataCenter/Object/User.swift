@@ -10,10 +10,10 @@ import Foundation
 import RealmSwift
 
 final class User: Object {
-    dynamic var username = ""
-    dynamic var lastAccess = Date()
-    dynamic var avatarUrl = ""
-    dynamic var baseCurrency = ""
+    @objc dynamic var username = ""
+    @objc dynamic var lastAccess = Date()
+    @objc dynamic var avatarUrl = ""
+    @objc dynamic var baseCurrency = ""
     override class func primaryKey() -> String? {
         return Key.User.username.rawValue
     }

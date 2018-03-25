@@ -132,11 +132,15 @@ extension DataCenter {
         }
         Alamofire.request("http://api.fixer.io/latest?base=\(baseCurrencyCode)").responseJSON { response in
             if response.result.isSuccess {
-                let jsonObject = JSON(data: response.data!)
-                if let rate = jsonObject["rates"].dictionaryObject as? [String:Float] {
-                    DataCenter.rates = rate
+                do {
+                    let jsonObject = try JSON(data: response.data!)
+                    if let rate = jsonObject["rates"].dictionaryObject as? [String:Float] {
+                        DataCenter.rates = rate
+                    }
+                    completion?(jsonObject)
+                } catch {
+                    
                 }
-                completion?(jsonObject)
             } else {
                 failed?(response.result.error)
             }

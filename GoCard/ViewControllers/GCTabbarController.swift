@@ -48,7 +48,7 @@ final class GCTabbarController: UITabBarController {
         }
     }
     
-    func logout() {
+    @objc func logout() {
         self.selectedIndex = 2
         UserDefaults.standard.set(false, forKey: "authed")
         self.showLoginIfNeed()

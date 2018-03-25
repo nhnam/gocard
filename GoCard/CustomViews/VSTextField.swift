@@ -160,7 +160,7 @@ class VSTextField: UITextField {
         NotificationCenter.default.addObserver(self, selector: #selector(VSTextField.textDidChange), name: NSNotification.Name(rawValue: "UITextFieldTextDidChangeNotification"), object: self)
     }
     
-    func textDidChange() {
+    @objc func textDidChange() {
         
         // TODO: - Isn't there more elegant way how to do this?
         let currentTextForFormatting: String

@@ -26,9 +26,11 @@ final class TopUpView: UIView {
             if let attText = valueLabel.attributedText {
                 let muAttText = NSMutableAttributedString(attributedString: attText)
                 guard let valueString = Float(value).decimalString() else { return }
-                editableValueTextfield.attributedText = valueString.apply([NSFontAttributeName: UIFont.mediumRoboto(size: 28), NSKernAttributeName: 1.14])
+                editableValueTextfield.attributedText = valueString.apply(
+                    [NSAttributedStringKey.font: UIFont.mediumRoboto(size: 28),
+                     NSAttributedStringKey.kern: 1.14])
                 muAttText.mutableString.setString(String(format: "%@ \(Session.currency)", valueString))
-                let attributes = [NSFontAttributeName: UIFont.mediumRoboto(size: 16)]
+                let attributes = [NSAttributedStringKey.font: UIFont.mediumRoboto(size: 16)]
                 let range = NSRange(location:muAttText.length - 3, length:3)
                 muAttText.setAttributes(attributes, range: range)
                 valueLabel.attributedText = muAttText
@@ -133,7 +135,7 @@ final class TopUpView: UIView {
         }
     }
     
-    func didTouchValueLabel(_ sender: UIGestureRecognizer) {
+    @objc func didTouchValueLabel(_ sender: UIGestureRecognizer) {
         isEditing = true
         if editableValueTextfield.canBecomeFirstResponder {
             editableValueTextfield.becomeFirstResponder()

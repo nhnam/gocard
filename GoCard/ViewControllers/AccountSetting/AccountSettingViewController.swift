@@ -46,7 +46,7 @@ class AccountSettingViewController: BaseViewController, UIScrollViewDelegate {
         scrollView.contentSize = CGSize(width: 2*scrollView.frame.size.width, height: scrollView.frame.size.height)
     }
     
-    internal func didTouchSegment(_ sender: SegmentControlItem?) {
+    @objc internal func didTouchSegment(_ sender: SegmentControlItem?) {
         guard let item = sender else { return }
         segments.forEach {
             if $0 != item { $0.active = false }

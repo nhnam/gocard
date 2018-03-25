@@ -28,7 +28,7 @@ extension UITextView {
         let attributedString = NSMutableAttributedString(string: text)
         attributedString.setLetterSpace(space)
         attributedString.setLineSpace(height)
-        attributedString.addAttribute(NSFontAttributeName, value: font, range: NSRange(location: 0, length: attributedString.length))
+        attributedString.addAttribute(NSAttributedStringKey.font, value: font, range: NSRange(location: 0, length: attributedString.length))
         self.attributedText = attributedString
     }
 }

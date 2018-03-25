@@ -24,7 +24,7 @@ final class MainCell: UITableViewCell {
         _ = titleLabel?.characterSpacing(0.09, lineHeight: 16, withFont: UIFont(name: "Helvetica Neue", size: 13) ?? UIFont.sfUIText(size: 13))
         _ = subLabel?.characterSpacing(0.27, lineHeight: 12, withFont: UIFont(name: "Helvetica Neue", size: 11) ?? UIFont.sfUIText(size: 11))
         guard let atts = rightLabel?.characterSpacing(0.22, lineHeight: 16, withFont: UIFont.sfUIText(size: 14)) else { return }
-        atts.addAttribute(NSForegroundColorAttributeName, value: (isIncome ? UIColor(hex:0x009977) : UIColor.textDefault), range: NSRange(location: 0, length: atts.length))
+        atts.addAttribute(NSAttributedStringKey.foregroundColor, value: (isIncome ? UIColor(hex:0x009977) : UIColor.textDefault), range: NSRange(location: 0, length: atts.length))
         rightLabel?.attributedText = atts
     }
 

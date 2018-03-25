@@ -60,7 +60,7 @@ class LockCardCell: UITableViewCell {
 }
 
 extension LockCardCell {
-    internal func pinsValueChanged(_ sender: PinTextfield) {
+    @objc internal func pinsValueChanged(_ sender: PinTextfield) {
         if sender.text?.isEmpty ?? true{
             sender.back()
         } else {

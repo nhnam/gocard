@@ -23,7 +23,7 @@ final class TransferViewController: BaseViewController {
                 let muAttText = NSMutableAttributedString(attributedString: attText)
                 guard let valueString = Float(payingValue).decimalString() else { return }
                 muAttText.mutableString.setString(String(format: "%@ \(Session.currency)", valueString))
-                muAttText.setAttributes([NSFontAttributeName: UIFont.mediumRoboto(size: 16)], range: NSRange(location:muAttText.length - 3, length:3))
+                muAttText.setAttributes([NSAttributedStringKey.font: UIFont.mediumRoboto(size: 16)], range: NSRange(location:muAttText.length - 3, length:3))
                 valueLabel.attributedText = muAttText
             } else {
                 valueLabel.text = String(format: "%2.2f \(Session.currency)", payingValue)

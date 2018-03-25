@@ -14,7 +14,7 @@ private var GLOWVIEW_KEY = "GLOWVIEW"
 
 extension UIView {
     
-    func glowWithColor(color:UIColor) {
+    @objc func glowWithColor(color:UIColor) {
         var image:UIImage
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale); do {
             self.layer.render(in: UIGraphicsGetCurrentContext()!)
@@ -33,30 +33,30 @@ extension UIView {
         self.layer.shadowOpacity = 1.0
     }
     
-    func round(){
+    @objc func round(){
         self.layer.cornerRadius = self.bounds.size.height/2
     }
-    func round(_ radius:CGFloat){
+    @objc func round(_ radius:CGFloat){
         self.layer.cornerRadius = radius
     }
-    func roundBorder(_ radius: CGFloat, borderWidth width: CGFloat = 1, borderColor color:UIColor = UIColor(hex:0xCCCCCC)){
+    @objc func roundBorder(_ radius: CGFloat, borderWidth width: CGFloat = 1, borderColor color:UIColor = UIColor(hex:0xCCCCCC)){
         self.round(radius)
         self.layer.borderWidth = width
         self.layer.borderColor = color.cgColor
     }
-    func roundBorder(_ width: CGFloat = 1, borderColor color:UIColor = UIColor(hex:0xCCCCCC)){
+    @objc func roundBorder(_ width: CGFloat = 1, borderColor color:UIColor = UIColor(hex:0xCCCCCC)){
         self.round()
         self.layer.borderWidth = width
         self.layer.borderColor = color.cgColor
     }
-    func decorate(_ width: CGFloat = 1, borderColor color:UIColor = UIColor(hex:0xCCCCCC)){
+    @objc func decorate(_ width: CGFloat = 1, borderColor color:UIColor = UIColor(hex:0xCCCCCC)){
         self.layer.borderWidth = width
         self.layer.borderColor = color.cgColor
     }
     
     func rotate(in duration: Double) {
         let animation = CABasicAnimation(keyPath: "transform.rotation.z")
-        animation.toValue = -(M_PI * 2.0)
+        animation.toValue = -(Double.pi * 2.0)
         animation.duration = 1.0
         animation.isCumulative = true
         animation.repeatCount = .infinity
@@ -184,9 +184,9 @@ extension UIButton {
         let attributedString = NSMutableAttributedString(string: text)
         attributedString.setLetterSpace(space)
         attributedString.setLineSpace(height)
-        attributedString.addAttribute(NSFontAttributeName, value: font, range: NSRange(location: 0, length: attributedString.length))
+        attributedString.addAttribute(NSAttributedStringKey.font, value: font, range: NSRange(location: 0, length: attributedString.length))
         if let color = self.titleLabel?.textColor {
-            attributedString.addAttribute(NSForegroundColorAttributeName, value: color, range: NSRange(location: 0, length: attributedString.length))
+            attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: color, range: NSRange(location: 0, length: attributedString.length))
         }
         self.setAttributedTitle(attributedString, for: .normal)
         self.setAttributedTitle(attributedString, for: .selected)
@@ -230,7 +230,7 @@ extension UILabel {
         let attributedString = NSMutableAttributedString(string: text)
         attributedString.setLetterSpace(space)
         attributedString.setLineSpace(height)
-        attributedString.addAttribute(NSFontAttributeName, value: font, range: NSRange(location: 0, length: attributedString.length))
+        attributedString.addAttribute(NSAttributedStringKey.font, value: font, range: NSRange(location: 0, length: attributedString.length))
         self.attributedText = attributedString
         self.textAlignment = textAlignment
         

@@ -22,7 +22,7 @@ final class GCNavigationController: UINavigationController {
         UINavigationBar.appearance().backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
         UINavigationBar.appearance().isTranslucent = true
         UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName:UIFont.navigationBarTitle, NSForegroundColorAttributeName: UIColor.white, NSKernAttributeName: Float(2.0)]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.font:UIFont.navigationBarTitle, NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.kern: Float(2.0)]
     }
     
     func setupTitleAttributed() {

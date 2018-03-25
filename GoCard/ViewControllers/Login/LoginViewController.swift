@@ -54,10 +54,10 @@ class LoginViewController: BaseViewController {
             $0?.characterSpacing(1.75)
         }
         
-        usernameField.attributedPlaceholder = NSAttributedString(string: "Your username", attributes: [NSFontAttributeName: UIFont.openSans(size: 14), NSForegroundColorAttributeName: UIColor.white])
-        passwordField.attributedPlaceholder = NSAttributedString(string: "Your password", attributes: [NSFontAttributeName: UIFont.openSans(size: 14), NSForegroundColorAttributeName: UIColor.white])
+        usernameField.attributedPlaceholder = NSAttributedString(string: "Your username", attributes: [NSAttributedStringKey.font: UIFont.openSans(size: 14), NSAttributedStringKey.foregroundColor: UIColor.white])
+        passwordField.attributedPlaceholder = NSAttributedString(string: "Your password", attributes: [NSAttributedStringKey.font: UIFont.openSans(size: 14), NSAttributedStringKey.foregroundColor: UIColor.white])
         passwordField.isSecureTextEntry = true
-        let registerTitle = NSAttributedString(string: "Register Now", attributes: [NSForegroundColorAttributeName: UIColor.white, NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue, NSFontAttributeName: UIFont.boldOpenSans(size: 10)])
+        let registerTitle = NSAttributedString(string: "Register Now", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue, NSAttributedStringKey.font: UIFont.boldOpenSans(size: 10)])
         
         buttonFacebook.backgroundColor = UIColor(hex:0x5072BA)
         buttonFacebook.centerButtonAndImageWithSpacing(25)

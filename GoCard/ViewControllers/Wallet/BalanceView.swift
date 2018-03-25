@@ -35,7 +35,7 @@ class BalanceView: UIView, UITableViewDelegate, UITableViewDataSource {
         }
         let realm = try! Realm()
         let wallets = realm.objects(Wallet.self).sorted(byKeyPath: "amount", ascending: false)
-        notificationToken = wallets.addNotificationBlock { (changes: RealmCollectionChange) in
+        notificationToken = wallets.observe { (changes: RealmCollectionChange) in
             switch changes {
             case .initial:
                 self.walletData.removeAll()

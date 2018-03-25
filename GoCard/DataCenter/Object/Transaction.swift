@@ -19,14 +19,14 @@ enum TransactionType {
 }
 
 final class Transaction: Object {
-    dynamic var id: Int = 0
-    dynamic var title: String = ""
-    dynamic var detail: String = ""
-    dynamic var time: Date = Date()
-    dynamic var photo: String = ""
-    dynamic var amount: String = "00.00"
-    dynamic var group: String = "00.00"
-    dynamic var isIncome = false
+    @objc dynamic var id: Int = 0
+    @objc dynamic var title: String = ""
+    @objc dynamic var detail: String = ""
+    @objc dynamic var time: Date = Date()
+    @objc dynamic var photo: String = ""
+    @objc dynamic var amount: String = "00.00"
+    @objc dynamic var group: String = "00.00"
+    @objc dynamic var isIncome = false
     override class func primaryKey() -> String? {
         return Key.Transaction.id.rawValue
     }

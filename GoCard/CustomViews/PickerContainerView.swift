@@ -68,7 +68,7 @@ class PickerContainerView: UIView {
         })
     }
     
-    func didTouchDone(_ sender: UIButton?) {
+    @objc func didTouchDone(_ sender: UIButton?) {
         PickerContainerView.close()
     }
     

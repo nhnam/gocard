@@ -12,7 +12,7 @@ class BaseViewController: UIViewController {
     private var titleLabel:UILabel?
     override open var title: String? {
         didSet{
-            titleLabel?.attributedText = NSAttributedString(string: title ?? "", attributes: [NSKernAttributeName: 2.0, NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.navigationBarTitle])
+            titleLabel?.attributedText = NSAttributedString(string: title ?? "", attributes: [NSAttributedStringKey.kern: 2.0, NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont.navigationBarTitle])
             titleLabel?.sizeToFit()
         }
     }
@@ -20,7 +20,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         titleLabel = UILabel()
         titleLabel?.text = ""
-        titleLabel?.attributedText = NSAttributedString(string: "", attributes: [NSKernAttributeName: 2.0, NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.navigationBarTitle])
+        titleLabel?.attributedText = NSAttributedString(string: "", attributes: [NSAttributedStringKey.kern: 2.0, NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont.navigationBarTitle])
         titleLabel?.sizeToFit()
         self.navigationItem.titleView = titleLabel
     }

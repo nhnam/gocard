@@ -31,7 +31,7 @@ final class TransactionViewController: BaseViewController {
                 let muAttText = NSMutableAttributedString(attributedString: attText)
                 guard let valueString = Float(value).decimalString() else { return }
                 muAttText.mutableString.setString(String(format: "%@ \(Session.currency)", valueString))
-                muAttText.setAttributes([NSFontAttributeName: UIFont.mediumRoboto(size: 16)], range: NSRange(location:muAttText.length - 3, length:3))
+                muAttText.setAttributes([NSAttributedStringKey.font: UIFont.mediumRoboto(size: 16)], range: NSRange(location:muAttText.length - 3, length:3))
                 valueLabel.attributedText = muAttText
             } else {
                 valueLabel.text = String(format: "%2.2f \(Session.currency)", value)
@@ -92,9 +92,9 @@ final class TransactionViewController: BaseViewController {
         searchField.addImageLeftView(#imageLiteral(resourceName: "Search Icon"))
         guard let attributedString = searchField.attributedText else { return }
         searchField.attributedPlaceholder = attributedString
-        let attributes = attributedString.attributes(at: 0, longestEffectiveRange: nil, in: NSRange(location: 0, length: attributedString.length))
-        searchField.defaultTextAttributes = attributes
-        searchField.typingAttributes = attributes
+        let attributes = attributedString.attributes(at: 0, longestEffectiveRange: nil, in: NSRange(location: 0, length: attributedString.length)) as [NSString : Any]
+        searchField.defaultTextAttributes = attributes as [String : Any]
+        searchField.typingAttributes = attributes as [String : Any]
         searchField.text = ""
         searchField.delegate = self
         searchField.addTarget(self, action: #selector(searchBarDidChanged(_:)), for: .editingChanged)
@@ -130,7 +130,7 @@ final class TransactionViewController: BaseViewController {
 }
 
 extension TransactionViewController:UITextFieldDelegate {
-    internal func searchBarDidChanged(_ sender: UITextField?) {
+    @objc internal func searchBarDidChanged(_ sender: UITextField?) {
         if let key = searchField.text {
             group1Filtered.removeAll()
             group1Filtered = group1.filter { $0.title.contains(key) || $0.detail.contains(key)}

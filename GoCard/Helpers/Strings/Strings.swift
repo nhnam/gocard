@@ -13,7 +13,7 @@ extension NSMutableAttributedString{
         //if(self.length == 0) {
         //    return
         //}
-        self.addAttribute(NSKernAttributeName, value: space, range: NSRange(location: 0, length: self.length))
+        self.addAttribute(NSAttributedStringKey.kern, value: space, range: NSRange(location: 0, length: self.length))
     }
     func setLineSpace(_ space:CGFloat){
         //if(self.length == 0) {
@@ -23,7 +23,7 @@ extension NSMutableAttributedString{
         paragraphStyle.minimumLineHeight = space
         paragraphStyle.maximumLineHeight = space
         paragraphStyle.lineHeightMultiple = space
-        self.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: self.length))
+        self.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: self.length))
     }
     convenience init(text:String, space:CGFloat) {
         self.init(string: text, attributes: nil)
@@ -36,8 +36,8 @@ extension String {
         return self.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
-    func apply(_ attributes:[String : Any]?) -> NSMutableAttributedString {
-        let muAttText = NSMutableAttributedString(string: self, attributes: attributes)
+    func apply(_ attributes:[NSAttributedStringKey : Any]?) -> NSMutableAttributedString {
+        let muAttText = NSMutableAttributedString(string: self, attributes: attributes);
         return muAttText
     }
 }
